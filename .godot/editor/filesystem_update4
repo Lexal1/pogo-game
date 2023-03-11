@@ -1,0 +1,5 @@
+res://default_env.tres
+res://scenes/World.tscn
+res://scenes/Player.tscn
+res://scenes/Spring.tscn
+res://scenes/Spikes.tscn
