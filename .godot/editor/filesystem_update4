@@ -3,3 +3,6 @@ res://scenes/World.tscn
 res://scenes/Player.tscn
 res://scenes/Spring.tscn
 res://scenes/Spikes.tscn
+res://scenes/Walking Enemy.tscn
+res://scripts/bounceBox.gd
+res://scripts/Player.gd

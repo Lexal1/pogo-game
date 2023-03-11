@@ -1,52 +1,55 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=9 format=3 uid="uid://dchyafof5b7fq"]
 
-[ext_resource path="res://sprites/temptiles.png" type="Texture2D" id=1]
-[ext_resource path="res://scripts/Walking Enemy.gd" type="Script" id=2]
-[ext_resource path="res://scenes/bounceBox.tscn" type="PackedScene" id=4]
+[ext_resource type="Texture2D" uid="uid://cku2c0t8lnn1s" path="res://sprites/temptiles.png" id="1"]
+[ext_resource type="Script" path="res://scripts/Walking Enemy.gd" id="2"]
+[ext_resource type="PackedScene" path="res://scenes/bounceBox.tscn" id="4"]
 
-[sub_resource type="AtlasTexture" id=7]
-atlas = ExtResource( 1 )
-region = Rect2( 16, 48, 16, 16 )
+[sub_resource type="AtlasTexture" id="7"]
+atlas = ExtResource("1")
+region = Rect2(16, 48, 16, 16)
 
-[sub_resource type="AtlasTexture" id=8]
-atlas = ExtResource( 1 )
-region = Rect2( 16, 64, 16, 16 )
+[sub_resource type="AtlasTexture" id="8"]
+atlas = ExtResource("1")
+region = Rect2(16, 64, 16, 16)
 
-[sub_resource type="SpriteFrames" id=3]
-animations = [ {
-"frames": [ SubResource( 7 ), SubResource( 8 ) ],
+[sub_resource type="SpriteFrames" id="3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("7")
+}, {
+"duration": 1.0,
+"texture": SubResource("8")
+}],
 "loop": true,
-"name": "default",
+"name": &"default",
 "speed": 5.0
-} ]
+}]
 
-[sub_resource type="RectangleShape2D" id=4]
-size = Vector2( 6, 0.5 )
+[sub_resource type="RectangleShape2D" id="4"]
+size = Vector2(6, 0.5)
 
-[sub_resource type="RectangleShape2D" id=6]
-size = Vector2( 5.5, 4 )
+[sub_resource type="RectangleShape2D" id="6"]
+size = Vector2(5.5, 4)
 
 [node name="Walking Enemy" type="CharacterBody2D"]
-script = ExtResource( 2 )
+script = ExtResource("2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2( -1, -8 )
-frames = SubResource( 3 )
+position = Vector2(-1, -8)
+sprite_frames = SubResource("3")
 frame = 1
-playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -0.5 )
-shape = SubResource( 4 )
+position = Vector2(0, -0.5)
+shape = SubResource("4")
 
 [node name="LedgeCheck" type="RayCast2D" parent="."]
-position = Vector2( 6, -1 )
-enabled = true
-target_position = Vector2( 0, 7 )
+position = Vector2(6, -1)
+target_position = Vector2(0, 7)
 
-[node name="bounceBox" parent="." instance=ExtResource( 4 )]
-pogobounce = -200
+[node name="bounceBox" parent="." instance=ExtResource("4")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bounceBox"]
-position = Vector2( -0.5, -4 )
-shape = SubResource( 6 )
+position = Vector2(-0.5, -4)
+shape = SubResource("6")
