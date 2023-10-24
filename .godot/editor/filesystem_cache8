@@ -1,27 +1,32 @@
-2a60927148abd1d33b818b535e306557
-::res://::1678553178
-default_env.tres::Environment::2680593772381964618::1678553178::0::1::::<><>::
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1698106144
+default_env.tres::Environment::2680593772381964618::1698084720::0::1::::<><>::
 export_presets.cfg::TextFile::-1::1671568764::0::1::::<><>::
-::res://movi3s/::1678499593
+::res://movi3s/::1698106054
 ::res://resources/::1671486016
-::res://scenes/::1678553178
+::res://scenes/::1698106079
 bounceBox.tscn::PackedScene::-1::1678388655::0::1::::<><>::res://scripts/bounceBox.gd
+collectableItem.tscn::PackedScene::2098440769965514844::1698084720::0::1::::<><>::res://scripts/collectableItem.gd<>uid://bvrkxyovy0mba::::res://sprites/graphics.png
+exitSign.tscn::PackedScene::7433248159711146566::1698083804::0::1::::<><>::uid://bvrkxyovy0mba::::res://sprites/graphics.png
 Hitbox.tscn::PackedScene::-1::1678388655::0::1::::<><>::res://scripts/Death.gd
-Player.tscn::PackedScene::8923279435792925351::1678553178::0::1::::<><>::res://scripts/Player.gd<>uid://732t7sdki2qj
-Spikes.tscn::PackedScene::2829194044727637760::1678553178::0::1::::<><>::uid://cku2c0t8lnn1s<>res://scenes/Hitbox.tscn
-Spring.tscn::PackedScene::5437191046511401419::1678553178::0::1::::<><>::res://scenes/bounceBox.tscn<>uid://cku2c0t8lnn1s<>res://scripts/Spring.gd
-Walking Enemy.tscn::PackedScene::7315547874971537730::1678553178::0::1::::<><>::uid://cku2c0t8lnn1s<>res://scripts/Walking Enemy.gd<>res://scenes/bounceBox.tscn
-World.tscn::PackedScene::8005137920624135244::1678553178::0::1::::<><>::uid://d0erdxsogevtn<>res://scripts/World.gd<>uid://dchyafof5b7fq<>uid://cku2c0t8lnn1s<>uid://cjp20h6tdavbf<>uid://bgkqoa6redi6k
-::res://scripts/::1678392864
-bounceBox.gd::GDScript::-1::1678388655::0::1::::<>Area2D<>::
-Death.gd::GDScript::-1::1678388655::0::1::::<>Area2D<>::
-Player.gd::GDScript::-1::1678392864::0::1::::Player<>CharacterBody2D<>::
-Spring.gd::GDScript::-1::1678388655::0::1::::<>Area2D<>::
-Walking Enemy.gd::GDScript::-1::1678389764::0::1::::<>CharacterBody2D<>::
-World.gd::GDScript::-1::1678388655::0::1::::<>Node2D<>::
-::res://sprites/::1678554509
-clyde.png::CompressedTexture2D::2305520571123297493::1674442854::1678388679::1::::<><>::
+Player.tscn::PackedScene::8923279435792925351::1698084720::0::1::::<><>::res://scripts/Player.gd<>uid://732t7sdki2qj::::res://sprites/clyde.png<>uid://bvrkxyovy0mba::::res://sprites/graphics.png
+Spikes.tscn::PackedScene::2829194044727637760::1698084720::0::1::::<><>::uid://cku2c0t8lnn1s::::res://sprites/temptiles.png<>res://scenes/Hitbox.tscn
+Spring.tscn::PackedScene::5437191046511401419::1698084720::0::1::::<><>::res://scenes/bounceBox.tscn<>res://scripts/Spring.gd<>uid://bvrkxyovy0mba::::res://sprites/graphics.png
+Walking Enemy.tscn::PackedScene::7315547874971537730::1698084720::0::1::::<><>::res://scripts/Walking Enemy.gd<>uid://bvrkxyovy0mba::::res://sprites/graphics.png<>res://scenes/bounceBox.tscn
+World.tscn::PackedScene::8005137920624135244::1698084720::0::1::::<><>::uid://d0erdxsogevtn::::res://scenes/Player.tscn<>res://scripts/World.gd<>uid://bvrkxyovy0mba::::res://sprites/graphics.png<>uid://dchyafof5b7fq::::res://scenes/Walking Enemy.tscn<>uid://cjp20h6tdavbf::::res://scenes/Spring.tscn<>uid://bgkqoa6redi6k::::res://scenes/Spikes.tscn<>uid://45rao53pmig7::::res://scenes/collectableItem.tscn
+::res://scripts/::1698106079
+bounceBox.gd::GDScript::-1::1693495578::0::1::::<>Area2D<>::
+collectableItem.gd::GDScript::-1::1693500921::0::1::::<>Area2D<>::
+Death.gd::GDScript::-1::1691166530::0::1::::<>Area2D<>::
+Player.gd::GDScript::-1::1693774444::0::1::::Player<>CharacterBody2D<>::
+Spring.gd::GDScript::-1::1693496129::0::1::::<>Area2D<>::
+Walking Enemy.gd::GDScript::-1::1693776050::0::1::::<>CharacterBody2D<>::
+World.gd::GDScript::-1::1693494272::0::1::::<>Node2D<>::
+::res://sprites/::1698106079
+clyde.png::CompressedTexture2D::2305520571123297493::1691113278::1691115032::1::::<><>::
+graphics.png::CompressedTexture2D::3896130348273152314::1698085787::1698106146::1::::<><>::
 icon.png::CompressedTexture2D::5504670173565260577::1671431738::1678388679::1::::<><>::
-pogoman.png::CompressedTexture2D::6512727417591593368::1671431642::1678388679::1::::<><>::
+pogoman.png::CompressedTexture2D::6512727417591593368::1698106054::1698106054::1::::<><>::
 sceneslean.tres::Animation::-1::1678388655::0::1::::<><>::
-temptiles.png::CompressedTexture2D::5517661633189858866::1678554509::1678554513::1::::<><>::
+splashscreen.png::CompressedTexture2D::7740582137701962434::1678892464::1678892473::1::::<><>::
+temptiles.png::CompressedTexture2D::5517661633189858866::1693768946::1693768948::1::::<><>::

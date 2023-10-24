@@ -1,103 +1,76 @@
-[gd_scene load_steps=15 format=3 uid="uid://cjp20h6tdavbf"]
+[gd_scene load_steps=11 format=3 uid="uid://cjp20h6tdavbf"]
 
 [ext_resource type="PackedScene" path="res://scenes/bounceBox.tscn" id="1"]
-[ext_resource type="Texture2D" uid="uid://cku2c0t8lnn1s" path="res://sprites/temptiles.png" id="2"]
 [ext_resource type="Script" path="res://scripts/Spring.gd" id="3"]
+[ext_resource type="Texture2D" uid="uid://bvrkxyovy0mba" path="res://sprites/graphics.png" id="3_dtoe5"]
 
 [sub_resource type="RectangleShape2D" id="1"]
-size = Vector2(8, 4)
+size = Vector2(8, 6)
 
-[sub_resource type="AtlasTexture" id="2"]
-atlas = ExtResource("2")
-region = Rect2(48, 80, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_xbm3x"]
+atlas = ExtResource("3_dtoe5")
+region = Rect2(64, 64, 16, 16)
 
-[sub_resource type="AtlasTexture" id="3"]
-atlas = ExtResource("2")
-region = Rect2(48, 80, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_lkg2b"]
+atlas = ExtResource("3_dtoe5")
+region = Rect2(32, 64, 16, 16)
 
-[sub_resource type="AtlasTexture" id="5"]
-atlas = ExtResource("2")
-region = Rect2(16, 80, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_yr4of"]
+atlas = ExtResource("3_dtoe5")
+region = Rect2(48, 64, 16, 16)
 
-[sub_resource type="AtlasTexture" id="6"]
-atlas = ExtResource("2")
-region = Rect2(0, 80, 16, 16)
-
-[sub_resource type="AtlasTexture" id="13"]
-atlas = ExtResource("2")
-region = Rect2(0, 80, 16, 16)
-
-[sub_resource type="AtlasTexture" id="4"]
-atlas = ExtResource("2")
-region = Rect2(32, 80, 16, 16)
-
-[sub_resource type="AtlasTexture" id="15"]
-atlas = ExtResource("2")
-region = Rect2(32, 80, 16, 16)
-
-[sub_resource type="AtlasTexture" id="16"]
-atlas = ExtResource("2")
-region = Rect2(48, 80, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_tft45"]
+atlas = ExtResource("3_dtoe5")
+region = Rect2(80, 64, 16, 16)
 
 [sub_resource type="SpriteFrames" id="11"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("2")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("3")
+"texture": SubResource("AtlasTexture_xbm3x")
 }, {
 "duration": 1.0,
-"texture": SubResource("5")
+"texture": SubResource("AtlasTexture_lkg2b")
 }, {
 "duration": 1.0,
-"texture": SubResource("6")
+"texture": SubResource("AtlasTexture_lkg2b")
 }, {
 "duration": 1.0,
-"texture": SubResource("13")
+"texture": SubResource("AtlasTexture_yr4of")
 }, {
 "duration": 1.0,
-"texture": SubResource("4")
+"texture": SubResource("AtlasTexture_xbm3x")
 }, {
 "duration": 1.0,
-"texture": SubResource("15")
-}, {
-"duration": 1.0,
-"texture": SubResource("16")
+"texture": SubResource("AtlasTexture_tft45")
 }],
 "loop": false,
 "name": &"springing",
-"speed": 20.0
+"speed": 18.0
 }]
 
-[sub_resource type="RectangleShape2D" id="12"]
-size = Vector2(8, 4)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hbmbw"]
+size = Vector2(8, 7)
 
 [node name="Spring" type="Area2D"]
-position = Vector2(0, 8)
+position = Vector2(0, 4)
 script = ExtResource("3")
-metadata/_edit_group_ = true
 
 [node name="bounceHitbox" parent="." instance=ExtResource("1")]
-bounce = -150
+bounce = -275
+PlayAnim = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="bounceHitbox"]
-position = Vector2(0, -4)
+[node name="bounceHitbox" type="CollisionShape2D" parent="bounceHitbox"]
+position = Vector2(0, -1)
 shape = SubResource("1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -8)
+position = Vector2(0, -4)
 sprite_frames = SubResource("11")
 animation = &"springing"
+frame = 5
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -4)
-shape = SubResource("12")
-
-[connection signal="body_entered" from="." to="." method="_on_Spring_body_entered"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_hbmbw")

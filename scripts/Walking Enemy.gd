@@ -1,15 +1,16 @@
 extends CharacterBody2D
 
-var direction = Vector2.RIGHT
+var direction = Vector2.LEFT
 
-@onready var sprite = $AnimatedSprite2D
-@onready var LedgeCheck = $LedgeCheck
+@onready var sprite = $sprite
+@onready var LedgeCheck = $ledgecheck
+@onready var WallCheck = $wallcheck
 
 func _ready():
 	pass
 
 func _process(delta):
-	var found_wall = is_on_wall()
+	var found_wall = WallCheck.is_colliding()
 	var found_ledge = not LedgeCheck.is_colliding()
 	if found_wall or found_ledge:
 		direction *= -1
@@ -19,3 +20,7 @@ func _process(delta):
 	set_velocity(velocity)
 	set_up_direction(Vector2.UP)
 	move_and_slide()
+
+func _kill():
+	queue_free()
+	

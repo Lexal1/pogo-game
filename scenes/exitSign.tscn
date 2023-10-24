@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=3 uid="uid://dd5yrm6nkakp7"]
+
+[ext_resource type="Texture2D" uid="uid://bvrkxyovy0mba" path="res://sprites/graphics.png" id="1_fh5hn"]
+
+[sub_resource type="Animation" id="Animation_rwc6r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_tki81"]
+resource_name = "spin"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(-2, -2, -2),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(-1, 1), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ck5mj"]
+_data = {
+"RESET": SubResource("Animation_rwc6r"),
+"spin": SubResource("Animation_tki81")
+}
+
+[node name="ExitSign" type="Node2D"]
+
+[node name="exitSign" type="AnimationPlayer" parent="."]
+autoplay = "spin"
+libraries = {
+"": SubResource("AnimationLibrary_ck5mj")
+}
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(0, 16)
+texture = ExtResource("1_fh5hn")
+region_enabled = true
+region_rect = Rect2(64, 16, 32, 16)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_fh5hn")
+region_enabled = true
+region_rect = Rect2(64, 0, 32, 16)
